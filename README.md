@@ -47,6 +47,28 @@ Descargá y configurá las herramientas en tu directorio de trabajo (ej: `C:\Her
 
 ---
 
+## 🐍 Configuración del Entorno de Python
+
+Para asegurar que el Worker funcione correctamente sin conflictos de dependencias, seguí estos pasos en `C:\Herramientas\`:
+
+1. **Crear Entorno Virtual:**
+   ```bash
+   python -m venv venv
+
+2. **Activar Entorno Virtual:**
+   ```bash
+   .\venv\Scripts\activate
+
+3. **Instalar Dependencias:**
+   ```bash
+   pip install -r requirements.txt
+
+1. **Crear Entorno Virtual:**
+   ```bash
+   python -m venv venv
+
+---
+
 ## 📊 Configuración de Base de Datos
 
 Ejecutá el siguiente script SQL para preparar las tablas de persistencia en PostgreSQL:
@@ -101,6 +123,11 @@ while True:
     # Ejecución intensiva de SQLMap
     command = f"python C:\\Herramientas\\sqlmap\\sqlmap.py -u {url} --batch --level 5 --risk 3"
     subprocess.run(command, shell=True)
+```
+
+**Ejecutar archivo**
+```bash
+  pip install -r requirements.txt
 ```
 
 ## 2. Ejecutar n8n
