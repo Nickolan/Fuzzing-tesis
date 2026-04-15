@@ -42,6 +42,9 @@ Descargá y configurá las herramientas en tu directorio de trabajo (ej: `C:\Her
   `git clone https://github.com/sqlmapproject/sqlmap.git`
 * **Nota:** Asegurate de que la ruta en el Worker de Python apunte correctamente a `C:\Herramientas\sqlmap\sqlmap.py`.
 
+### 4. Memurai LTS (Developer Edition)
+* **Sistema** Descarga la version `LTS` de la edicion Developer en [Memurai](https://www.memurai.com/get-memurai)
+
 ---
 
 ## 📊 Configuración de Base de Datos
