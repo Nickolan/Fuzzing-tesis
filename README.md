@@ -26,16 +26,21 @@ El flujo utiliza una arquitectura basada en eventos para evitar cuellos de botel
 
 ## 🛠️ Instalación de Herramientas
 
-Cloná los repositorios necesarios en tu directorio de herramientas (ej: `C:\Herramientas\`):
+Descargá y configurá las herramientas en tu directorio de trabajo (ej: `C:\Herramientas\`):
 
-### 1. Nuclei
-`git clone https://github.com/projectdiscovery/nuclei-templates.git`
+### 1. Nuclei (ProjectDiscovery)
+* **Ejecutable:** Descargá `nuclei_windows_amd64.zip` desde las [Releases oficiales de GitHub](https://github.com/projectdiscovery/nuclei/releases). Extraé el archivo `nuclei.exe` y guardalo en `C:\Herramientas\`.
+* **Plantillas:** Cloná el repositorio de templates para que el flujo pueda invocarlas:
+  `git clone https://github.com/projectdiscovery/nuclei-templates.git`
+* **Actualización:** Podés correr `nuclei -up` desde la terminal para mantenerlo al día.
 
-### 2. SQLMap
-`git clone https://github.com/sqlmapproject/sqlmap.git`
+### 2. ffuf (Fuzz Faster U Fool)
+* **Ejecutable:** Descargá `ffuf_windows_amd64.zip` desde las [Releases oficiales de GitHub](https://github.com/ffuf/ffuf/releases). Extraé el archivo `ffuf.exe` y guardalo en `C:\Herramientas\`.
 
-### 3. ffuf
-Descargá el binario oficial y asegúrate de que esté disponible en `C:\Herramientas\ffuf.exe`.
+### 3. SQLMap
+* **Repositorio:** Cloná el proyecto oficial:
+  `git clone https://github.com/sqlmapproject/sqlmap.git`
+* **Nota:** Asegurate de que la ruta en el Worker de Python apunte correctamente a `C:\Herramientas\sqlmap\sqlmap.py`.
 
 ---
 
