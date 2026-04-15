@@ -63,9 +63,9 @@ Para asegurar que el Worker funcione correctamente sin conflictos de dependencia
    ```bash
    pip install -r requirements.txt
 
-1. **Crear Entorno Virtual:**
+1. **Ejecutar script de python:**
    ```bash
-   python -m venv venv
+   python worker_sqlmap.py
 
 ---
 
