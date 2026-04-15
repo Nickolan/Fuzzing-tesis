@@ -1,6 +1,6 @@
 # 🛡️ Laboratorio de Fuzzing y Escaneo Automatizado
 
-Este proyecto es un sistema de automatización de seguridad ofensiva y defensiva (Blue Team) desarrollado por **Mario Moreno**, estudiante de la **Universidad Tecnológica Nacional (UTN)** en Mendoza, Argentina. El objetivo principal es orquestar herramientas de seguridad líderes en la industria para realizar reconocimientos y detecciones de vulnerabilidades de manera profesional y escalable.
+Este proyecto es un sistema de automatización de seguridad ofensiva y defensiva (Blue Team) desarrollado por **Nicolas Navarrete** y **Lautaro Ferreria**, estudiante de la **Universidad Tecnológica Nacional (UTN)** en Mendoza, Argentina. El objetivo principal es orquestar herramientas de seguridad líderes en la industria para realizar reconocimientos y detecciones de vulnerabilidades de manera profesional y escalable.
 
 ## 🏗️ Arquitectura del Sistema
 
