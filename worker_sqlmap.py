@@ -9,7 +9,7 @@ REDIS_CONF = {'host': 'localhost', 'port': 6379, 'db': 0}
 DB_CONF = {
     'dbname': 'db_fuzzing', 
     'user': 'postgres',
-    'password': 'nikolan',
+    'password': 'password',
     'host': 'localhost'
 }
 
@@ -53,7 +53,7 @@ while True:
     command = [
         "python", "C:\\Herramientas\\sqlmap\\sqlmap.py",
         "-u", target_url,
-        "--batch", "--level", "5", "--risk", "3"
+        "--batch", "--level", "3", "--risk", "1"
     ]
     
     result = subprocess.run(command, capture_output=True, text=True)
