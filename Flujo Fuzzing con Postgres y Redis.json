@@ -589,7 +589,7 @@
       "parameters": {
         "operation": "push",
         "list": "sqlmap_tasks",
-        "messageData": "={{ JSON.stringify({ \"url\": $json.url, \"level\": 5, \"risk\": 3 }) }}",
+        "messageData": "={{ JSON.stringify({ \"url\": $json.url, \"level\": 3, \"risk\": 1 }) }}",
         "tail": true
       },
       "type": "n8n-nodes-base.redis",
@@ -801,7 +801,7 @@
     "executionOrder": "v1",
     "binaryMode": "separate"
   },
-  "versionId": "16dc5c5e-dd09-4d53-8437-f9aac757761f",
+  "versionId": "6998b639-8efb-4b9c-9f8e-1eee980d238c",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "279750e54c19fe28dd900064a3246fcf4e041527fe2e0ed9e150e5f13a64f187"
