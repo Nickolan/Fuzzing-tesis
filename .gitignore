@@ -4,3 +4,4 @@ ffuf_results.json
 .venv
 nuclei-templates
 sqlmap
+*.exe
