@@ -12,7 +12,7 @@ logger = logging.getLogger("sqlmap-worker")
 # --- CONFIGURACIÓN ---
 REDIS_CONF = {'host': 'localhost', 'port': 6379, 'db': 0}
 DB_CONF = {
-    'dbname': 'fuzzing_db', 
+    'dbname': 'db_fuzzing', 
     'user': 'postgres',
     'password': 'nikolan',
     'host': 'localhost'
