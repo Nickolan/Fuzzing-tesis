@@ -39,12 +39,17 @@ def save_to_postgres(url, title, payload, scan_id):
         """
         evidence = f"Técnica: {title}\nPayload: {payload}"
         
+        # [FIX 2026-07-27] Severidad hardcodeada corregida de 'critical' a 'high':
+        # una inyección SQL confirmada corresponde a CWE-89 / Alto según la
+        # clasificación usada en el resto de la tesis (Tabla 8), no a Crítico.
+        # Consistente con el mismo fix aplicado en el nodo n8n
+        # "Consolidar Resultados Nuclei" (sección 3, procesamiento de SQLMap).
         cur.execute(query, (
             scan_id,
             'SQLMap (Worker)', 
             'SQL Injection', 
             89,
-            'critical',
+            'high',
             url, 
             'Vulnerabilidad detectada mediante escaneo asíncrono profundo.',
             'Implementar consultas parametrizadas.',
@@ -60,7 +65,7 @@ def save_to_postgres(url, title, payload, scan_id):
 logger.info("🛡️ Worker de Seguridad Activo. Esperando tareas...")
 
 while True:
-    _, task_raw = r.blpop('sqlmap_test', 0)
+    _, task_raw = r.blpop('sqlmap_tasks', 0)
     
     try:
         task = json.loads(task_raw)
@@ -86,12 +91,22 @@ while True:
             
         logger.info(f"🚀 Iniciando SQLMap en: {target_url}")
         
-        level = task.get('level', 3)
+        level = task.get('level', 2)
         risk = task.get('risk', 1)
         cookie = task.get('cookie', "security=low")
 
 
-        newCommand = f"python C:\\Users\\Nicolas\\Herramientas\\sqlmap\\sqlmap.py -u \"{target_url}\" --batch --random-agent --level={level} --risk={risk} --cookie \"{cookie}\" --flush-session"
+        newCommand = [
+            "python",
+            "C:\\Users\\Nicolas\\Herramientas\\sqlmap\\sqlmap.py",
+            "-u", target_url,
+            "--batch",
+            "--random-agent",
+            f"--level={level}",
+            f"--risk={risk}",
+            "--cookie", cookie,
+            "--flush-session"
+        ]
         
         logger.info(f"⚙️ Comando a ejecutar: {newCommand}")
         
@@ -133,4 +148,4 @@ while True:
                 logger.info(f"✅ Escaneo limpio para {target_url}. No se encontraron vulnerabilidades.")
                 
         except subprocess.TimeoutExpired:
-            logger.error(f"⏳ Timeout al escanear {target_url}. La tarea alcanzó los 5 minutos y fue cancelada.")
+            logger.error(f"⏳ Timeout al escanear {target_url}. La tarea alcanzó los 10 minutos y fue cancelada.")
